@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container">
+  {% for i in table_list %}
+    <div class="card m-3">
+        <div class="card-body">
+          <h2 class="card-title">{{i.title}}</h2>
+          <div class="card-text">{{i.content| slice:"200"}}</div>
+          <div>Author : {{i.author| title}}</div>
+           <a class="btn btn-primary" href="{% url 'home' i.slug %}">read more</a>
+        </div>
+    </div>
+   {% endfor%} 
+</div>
+{% endblock content %}
+
